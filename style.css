@@ -147,3 +147,35 @@ footer {
     font-size: 1.1rem;
     color: #3498db;
 }
+/* Define a animação de "surgir" */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplica a animação ao conteúdo principal */
+.container, .hero {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+img {
+    /* ... seus estilos atuais ... */
+    transition: transform 0.3s ease; /* Faz a mudança ser suave */
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1); /* Aumenta 10% do tamanho */
+}
+.navbar a {
+    /* ... seus estilos atuais ... */
+    display: inline-block; /* Necessário para o transform funcionar bem */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.2); /* Zoom no texto */
+    color: #3498db; /* Muda para o azul que você já está usando */
+}
+.navbar a:active {
+    transform: scale(0.95); /* Dá um leve "totó" para trás, como se fosse um botão real sendo apertado */
+}
